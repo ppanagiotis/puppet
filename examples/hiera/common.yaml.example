@@ -13,3 +13,7 @@ users:
     shell: '/bin/bash'
     sshkey: 'ssh public key'
     sshkeytype: 'ssh key type'
+
+#postfix settings
+smarthost: "mail.example.com"
+default_mail: "admin@example.com"
