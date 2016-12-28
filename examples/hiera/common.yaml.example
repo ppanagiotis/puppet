@@ -1,0 +1,15 @@
+#Puppet db settings
+puppetdb::user: "puppetdb_user"
+puppetdb::password: "%{hiera('trocla_lookup::plain::puppetdb_password')}"
+puppetdb::database: "puppetdb_database"
+
+#Users that should exists everywhere
+users:
+  example_user:
+    realname: 'example'
+    uid: 1000
+    groups: ['admins']
+    password: 'encoded_password'
+    shell: '/bin/bash'
+    sshkey: 'ssh public key'
+    sshkeytype: 'ssh key type'
