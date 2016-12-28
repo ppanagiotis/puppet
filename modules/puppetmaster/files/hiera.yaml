@@ -1,0 +1,15 @@
+---
+:backends:
+  - yaml
+  - trocla
+
+:hierarchy:
+  - "node/%{::fqdn}"
+  - "osfamily/%{::osfamily}"
+  - common
+
+:yaml:
+  :datadir: /etc/puppet/code/hiera
+
+:trocla:
+  :config: '/etc/troclarc.yaml'
