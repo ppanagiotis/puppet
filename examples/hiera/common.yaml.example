@@ -17,3 +17,12 @@ users:
 #postfix settings
 smarthost: "mail.example.com"
 default_mail: "admin@example.com"
+
+#nameservers
+resolvconf::nameservers:
+ - 8.8.8.8
+ - 8.8.4.4
+resolvconf::domain: "%{::domain}"
+resolvconf::search:
+ - "%{hiera('resolvconf::domain')}"
+ - example.com
