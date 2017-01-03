@@ -1,0 +1,2 @@
+cat $BASEDIR/certs/$DOMAIN/fullchain.pem $BASEDIR/certs/$DOMAIN/privkey.pem > /etc/<%= @deploy %>/certs/$DOMAIN.pem
+/etc/init.d/<%= @deploy %> reload

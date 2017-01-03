@@ -13,6 +13,7 @@ updatefile="$(mktemp)"
 BASEDIR=<%= @basedir %>
 KEY=$BASEDIR/dns_key/key
 NSUPDATE="nsupdate -k ${KEY}"
+DOMAIN="<%= @zone %>"
 done="no"
 
 if [[ "$1" = "deploy_challenge" ]]; then
@@ -28,6 +29,9 @@ if [[ "$1" = "clean_challenge" ]]; then
 fi
 
 if [[ "${1}" = "deploy_cert" ]]; then
+<% if @deploy %>
+<%= scope.function_template(["letsencrypt/deploy.erb"]) %>
+<% end %>
     # do nothing for now
     done="yes"
 fi

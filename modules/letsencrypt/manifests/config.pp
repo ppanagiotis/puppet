@@ -9,6 +9,7 @@
 #    nsupdate:
 #      zone: 'example.com'
 #      key: "%{hiera('trocla_lookup::plain::rndc-key')}"
+#      deploy: 'haproxy'
 #  
 class letsencrypt::config {
 
@@ -44,6 +45,7 @@ class letsencrypt::config {
 
       $zone = $letsencypt[nsupdate][zone]
       $key = $letsencypt[nsupdate][key]
+      $deploy = $letsencypt[nsupdate][deploy]
 
       file { "${basedir}/dns_key" :
         ensure  => 'directory',
