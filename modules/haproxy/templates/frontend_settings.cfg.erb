@@ -1,0 +1,11 @@
+#---------------------------------------------------------------------
+# frontend settings
+
+frontend <%= @title %>
+<% @options.each do |key, val| -%>
+<% Array(val).each do |item| -%>
+  <%= key %> <%= item %>
+<% end end -%>
+
+# frontend settings
+#---------------------------------------------------------------------

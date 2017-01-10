@@ -15,4 +15,10 @@ class haproxy::config ($config_file) {
   $global = $haproxy['global']
   create_resources('haproxy::global',$global, $defaults)
 
+  $stats = $haproxy['stats']
+  create_resources('haproxy::stats',$stats, $defaults)
+
+  $frontend = $haproxy['frontend']
+  create_resources('haproxy::frontend',$frontend, $defaults)
+
 }

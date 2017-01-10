@@ -1,0 +1,11 @@
+#---------------------------------------------------------------------
+# stats settings
+
+listen stats
+<% @options.each do |key, val| -%>
+<% Array(val).each do |item| -%>
+  <%= key %> <%= item %>
+<% end end -%>
+
+# stats settings
+#---------------------------------------------------------------------
