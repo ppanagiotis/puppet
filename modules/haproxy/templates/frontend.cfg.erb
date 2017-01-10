@@ -1,0 +1,2 @@
+  acl is_<%= @name %>_fqdn hdr(host) -i <%= @name %>.<%= @domain %>
+  use_backend <%= @name %>_backend if is_<%= @name %>_fqdn

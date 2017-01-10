@@ -1,0 +1,6 @@
+
+backend <%= @name %>_backend
+  cookie stick insert indirect maxlife 10h
+  server <%=@name %> <%= @ipaddress %>:<%= @port %> cookie <%= @name %> check inter 2000 rise 2 fall 5
+  option forwardfor header X-Client
+  option http-server-close

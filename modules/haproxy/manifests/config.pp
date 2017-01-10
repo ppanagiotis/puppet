@@ -21,4 +21,7 @@ class haproxy::config ($config_file) {
   $frontend = $haproxy['frontend']
   create_resources('haproxy::frontend',$frontend, $defaults)
 
+  $manual_backends = $haproxy['manual_backends']
+  create_resources('haproxy::manual_backends',$manual_backends, $defaults)
+
 }
