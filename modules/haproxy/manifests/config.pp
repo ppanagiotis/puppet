@@ -12,4 +12,7 @@ class haproxy::config ($config_file) {
   $default = $haproxy['default']
   create_resources('haproxy::default',$default, $defaults)
 
+  $global = $haproxy['global']
+  create_resources('haproxy::global',$global, $defaults)
+
 }
