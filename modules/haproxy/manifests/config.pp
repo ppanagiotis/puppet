@@ -24,4 +24,7 @@ class haproxy::config ($config_file) {
   $manual_backends = $haproxy['manual_backends']
   create_resources('haproxy::manual_backends',$manual_backends, $defaults)
 
+  Concat::Fragment <<| tag == 'haproxy-frontend' |>>
+  Concat::Fragment <<| tag == 'haproxy-backend' |>>
+
 }
