@@ -19,4 +19,18 @@ define nginx::site ($port, $proxy_pass) {
     tag     => 'nginx-site',
   }
 
+  @@concat::fragment { "frontend_${name}":
+    order   => "${frontends_order}",
+    target  => "${target}",
+    content => template('haproxy/frontend.cfg.erb'),
+    tag     => 'haproxy-frontend',
+  }
+
+  @@concat::fragment { "backend_${name}":
+    order   => "${backends_order}",
+    target  => "${target}",
+    content => template('haproxy/backend.cfg.erb'),
+    tag     => 'haproxy-backend',
+  }
+
 }
