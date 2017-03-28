@@ -4,4 +4,5 @@ class profile::base {
   include postfix
   include security_updates
   include resolvconf
+  include debian
 }
