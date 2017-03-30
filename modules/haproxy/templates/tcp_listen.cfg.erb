@@ -1,0 +1,13 @@
+#---------------------------------------------------------------------
+# tcp <%= @name %>
+
+listen <%= @name %>
+    mode tcp
+    bind <%= @bind %>:<%= @port %>
+    option tcplog
+    option tcp-check
+    log global
+    server <%= @name %> <%= @server %>:<%= @port %> check port <%= @port %>
+
+# end tcp <%= @name %>
+#---------------------------------------------------------------------
