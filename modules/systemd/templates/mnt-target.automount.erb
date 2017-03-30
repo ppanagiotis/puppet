@@ -1,0 +1,8 @@
+[Unit]
+Description=Automount <%= @name %>
+
+[Automount]
+Where=/mnt/<%= @name %>
+
+[Install]
+WantedBy=multi-user.target

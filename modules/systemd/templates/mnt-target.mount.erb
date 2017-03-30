@@ -1,0 +1,10 @@
+[Unit]
+Description=<%= @name %>
+
+[Mount]
+What=<%= @what %>
+Where=/mnt/<%= @name %>
+Type=<%= @type %>
+
+[Install]
+WantedBy=multi-user.target
