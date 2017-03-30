@@ -5,4 +5,5 @@ class profile::base {
   include security_updates
   include resolvconf
   include debian
+  include sudo
 }
